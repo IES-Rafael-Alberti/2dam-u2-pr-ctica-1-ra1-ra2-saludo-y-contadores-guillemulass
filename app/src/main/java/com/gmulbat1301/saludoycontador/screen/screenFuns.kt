@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview
 @Composable
-fun mainScreen() {
+fun MainScreen() {
     var greetingsString by rememberSaveable { mutableStateOf("") }
     var openDialog by rememberSaveable { mutableStateOf(false) }
     var myName by rememberSaveable { mutableStateOf("") }
@@ -111,8 +111,4 @@ fun mainScreen() {
             )
         }
     }
-}
-
-fun dialog(){
-
 }
