@@ -33,6 +33,9 @@ fun MainScreen() {
     var openDialog by rememberSaveable { mutableStateOf(false) }
     var myName by rememberSaveable { mutableStateOf("") }
 
+    var counterAccept by rememberSaveable { mutableStateOf(0) }
+    var counterCancel by rememberSaveable { mutableStateOf(0) }
+
     Column (
         modifier = Modifier
             .fillMaxSize()
@@ -82,11 +85,12 @@ fun MainScreen() {
                             Button(
                                 onClick = {
                                     greetingsString = "Hola, $myName"
+                                    counterAccept += 1
                                     openDialog = false
                                 },
                                 modifier = Modifier.padding(10.dp)
                             ) {
-                                Text("A")
+                                Text("A $counterAccept")
                             }
                             Button(
                                 onClick = {
@@ -98,11 +102,12 @@ fun MainScreen() {
                             }
                             Button(
                                 onClick = {
+                                    counterCancel += 1
                                     openDialog = false
                                 },
                                 modifier = Modifier.padding(10.dp)
                             ) {
-                                Text("C")
+                                Text("C $counterCancel")
                             }
                         }
                     }
